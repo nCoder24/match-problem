@@ -1,6 +1,6 @@
 const { describe, it } = require("node:test");
 const assert = require("assert");
-const { match } = require("../src/match-strings");
+const { match } = require("../src/match");
 
 describe("matchStrings", () => {
   it("should give set of set1 string append with set2 matching string", () => {

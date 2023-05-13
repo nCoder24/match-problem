@@ -1,10 +1,9 @@
 const fs = require("fs");
 
 const match = (set1, set2, matchLength = 4) => {
-  const referenceTable = set2.reduce(({ ...table }, set2Input) => {
-    table[set2Input.substr(0, matchLength)] = set2Input.substr(matchLength);
-    return table;
-  }, {});
+  const referenceTable = Object.fromEntries(
+    set2.map((input) => [input.slice(0, matchLength), input.slice(matchLength)])
+  );
 
   return set1.map(
     (set1Input) => set1Input + referenceTable[set1Input.substr(-matchLength)]
