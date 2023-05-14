@@ -6,7 +6,7 @@ const match = (set1, set2, matchLength = 4) => {
   );
 
   return set1.map(
-    (set1Input) => set1Input + referenceTable[set1Input.substr(-matchLength)]
+    (input) => input + referenceTable[input.substr(-matchLength)]
   );
 };
 
